@@ -1,7 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-assets/ export-ignore
 tests/ export-ignore
 README.md export-ignore
 *.md export-ignore
