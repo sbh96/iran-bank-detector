@@ -40,8 +40,9 @@ class IranBankDetector {
 
     public function getBankByIBanCode(string $iBan): ?array {
         $cleaned = $this->cleanIBanCode($iBan);
+        $bankCode = substr($iBan, 4, 3);
         foreach ($this->banks as $bank) {
-            if (!empty($bank["iBan"]) && strpos($cleaned, $bank["iBan"]) === 0) {
+            if (!empty($bank["iBan"]) && $bank["iBan"] === $bankCode) {
                 return $this->attachLogoPath($bank);
             }
         }
